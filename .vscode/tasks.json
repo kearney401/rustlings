@@ -2,6 +2,13 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "hint",
+            "description": "Specify hint",
+            "type": "promptString"
+        }
+    ],
     "tasks": [
         {
             "label": "Rustlings Watch",
@@ -21,6 +28,17 @@
                 "run",
                 "--",
                 "verify"
+            ]
+        },
+        {
+            "label": "Rustlings Hint",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "run",
+                "--",
+                "hint",
+                "${input:hint}"
             ]
         }
     ]
